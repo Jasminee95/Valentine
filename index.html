@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malin</title>
+  <style>
+    body {
+      background: linear-gradient(45deg, #ffe6e6, #ffc6c6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Container for the flip card */
+    .flip-card {
+      background-color: transparent;
+      width: 500px;
+      height: 400px;
+      perspective: 1000px; /* Gives a 3D effect */
+    }
+    /* The inner container that flips */
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+    /* When the card is flipped */
+    .flip-card-inner.flipped {
+      transform: rotateY(180deg);
+    }
+    /* Front and back sides of the card */
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #ff4d4d;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      backface-visibility: hidden;
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    /* Back side is rotated */
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+    /* Animated heart styling (used on both sides) */
+    .heart {
+      color: #ff4d4d;
+      font-size: 50px;
+      display: inline-block;
+      animation: beat 2s infinite;
+      cursor: pointer;
+      user-select: none;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(2); }
+      50% { transform: scale(1.5); }
+    }
+  </style>
+</head>
+<body>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <!-- Front Side -->
+      <div class="flip-card-front">
+        <div class="heart flip-toggle">♥</div>
+        <h1 style="font-family: 'Courier New', Courier, monospace;">Happy Valentine's Day!</h1>
+        <p style="font-style: oblique; font-family: 'Times New Roman', Times, serif;">♥ If the stars should ever die, we’ll make our own light ♥<br>♥ you and I ♥</p>
+      </div>
+     
+      <div class="flip-card-back">
+        <div class="heart flip-toggle">♥</div>
+        <h2 style="font-style: oblique; font-family: 'Times New Roman', Times, serif;">In a sea of people, my eyes will always search for you</h2>
+        <p style="font-style: oblique;">♥ Through life’s waves, you steady the sail ♥ <br>
+           My anchor, my strength, a love that won’t fail <br>
+           With every step, you’re by my side <br>
+           In your love, I find my pride <br>
+          For better or worse, through joy and strife <br>
+          You’re my heart, my partner, my life <br>
+          This Valentine’s Day, I celebrate you <br>
+          ♥ My forever love, so faithful and true ♥</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.flip-toggle').forEach(el => {
+      el.addEventListener('click', function(event) {
+        event.stopPropagation();
+        document.querySelector('.flip-card-inner').classList.toggle('flipped');
+      });
+    });
+  </script>
+</body>
+</html>
