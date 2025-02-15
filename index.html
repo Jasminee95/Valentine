@@ -14,14 +14,14 @@
       margin: 0;
       font-family: Arial, sans-serif;
     }
-    /* Container for the flip card */
+    
     .flip-card {
       background-color: transparent;
       width: 500px;
       height: 400px;
-      perspective: 1000px; /* Gives a 3D effect */
+      perspective: 1000px; 
     }
-    /* The inner container that flips */
+  
     .flip-card-inner {
       position: relative;
       width: 100%;
@@ -29,11 +29,11 @@
       transition: transform 1s;
       transform-style: preserve-3d;
     }
-    /* When the card is flipped */
+   
     .flip-card-inner.flipped {
       transform: rotateY(180deg);
     }
-    /* Front and back sides of the card */
+   
     .flip-card-front,
     .flip-card-back {
       position: absolute;
@@ -53,11 +53,11 @@
       align-items: center;
       
     }
-    /* Back side is rotated */
+    
     .flip-card-back {
       transform: rotateY(180deg);
     }
-    /* Animated heart styling (used on both sides) */
+   
     .heart {
       color: #ff4d4d;
       font-size: 50px;
@@ -75,7 +75,7 @@
 <body>
   <div class="flip-card">
     <div class="flip-card-inner">
-      <!-- Front Side -->
+      
       <div class="flip-card-front">
         <div class="heart flip-toggle">♥</div>
         <h1 style="font-family: 'Courier New', Courier, monospace;">Happy Valentine's Day!</h1>
